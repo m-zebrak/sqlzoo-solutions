@@ -78,6 +78,7 @@ WHERE ((population > 250000000) OR (area > 3000000))
     AND NOT ((population > 250000000) AND (area > 3000000));
 ```
 Comment: 'XOR' operator is not supported in sqlzoo.net interpreter
+
 9. Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
 For South America show population in millions and GDP in billions both to 2 decimal places.
 ```sql
