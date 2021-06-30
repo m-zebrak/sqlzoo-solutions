@@ -1,6 +1,10 @@
 # sqlzoo-solutions
 
-My solutions to all of the 9 topics posted on [sqlzoo.net](http://sqlzoo.net/)  tutorial.
+   My solutions to all of the 9 topics posted on the [sqlzoo.net](http://sqlzoo.net/)  tutorial.
+
+   All answers were :100: percent correct and generated correct feedback on the day they were uploaded.
+   
+   Feel free to use and if u have any suggestions  don't hesitate to contact me . :smiley:
 
 ## Sections:
 
