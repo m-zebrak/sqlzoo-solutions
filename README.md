@@ -1,6 +1,6 @@
 # sqlzoo-solutions
 
-   My solutions to all of the 9 topics posted on the [sqlzoo.net](http://sqlzoo.net/)  tutorial.
+   My solutions to all of the main 9 and 4 additional topics posted on the [sqlzoo.net](http://sqlzoo.net/)  tutorial.
 
    All answers were :100: percent correct and generated correct feedback on the day they were uploaded.
    
@@ -17,6 +17,13 @@
 7. [More JOIN](#more-join)
 8. [Using NULL](#using-null)
 9. [Self JOIN](#self-join)
+
+Additionally:
+
+10. [SELECT names](#select-names)
+11. [Numeric examples](#numeric-examples)
+12. [Window functions](#window-functions)
+13. [COVID 19](#covid-19)
 
 ## SELECT basics
 
@@ -1009,3 +1016,8 @@ WHERE a.num = b.num
   AND stopa.name = 'Craiglockhart'
   AND stopd.name = 'Lochend';
 ```
+
+## SELECT names
+## Numeric examples
+## Window functions
+## COVID 19
