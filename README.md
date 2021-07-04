@@ -1335,3 +1335,72 @@ GROUP BY x.party;
 ```
 
 ## COVID 19
+
+1. Modify the query to show data from Spain
+
+```sql
+SELECT name, DAY (whn),
+    confirmed, deaths, recovered
+FROM covid
+WHERE name = 'Spain'
+  AND MONTH (whn) = 3
+ORDER BY whn;
+```
+
+2. Modify the query to show confirmed for the day before.
+
+```sql
+SELECT name, DAY (whn), confirmed,
+    LAG(confirmed, 1) OVER (PARTITION by name ORDER BY whn)
+FROM covid
+WHERE name = 'Italy' AND MONTH (whn) = 3
+ORDER BY whn;
+```
+
+3. Show the number of new cases for each day, for Italy, for March.
+
+```sql
+SELECT name,
+    DAY (whn) AS day,
+    confirmed - LAG(confirmed, 1) OVER (PARTITION BY name ORDER BY whn) AS newcases
+FROM covid
+WHERE name = 'Italy'
+  AND MONTH (whn) = 3
+ORDER BY whn;
+```
+
+4. Show the number of new cases in Italy for each week - show Monday only.
+
+        BUG: 'DATE_FORMAT' is not a recognized built-in function name. 
+              It doesn't even show what the correct answer is.
+
+
+5. Show the number of new cases in Italy for each week - show Monday only.
+
+        BUG: 'DATE_FORMAT' is not a recognized built-in function name. 
+              It doesn't even show what the correct answer is.
+
+6. The query shown shows the number of confirmed cases together with the world ranking for cases. United States has the
+   highest number, Spain is number 2... Notice that while Spain has the second highest confirmed cases, Italy has the
+   second highest number of deaths due to the virus. Include the ranking for the number of deaths in the table.
+
+```sql
+SELECT name,
+       confirmed,
+       RANK() OVER (ORDER BY confirmed DESC) AS rc, deaths,
+       RANK() OVER (ORDER BY deaths DESC) AS rd
+FROM covid
+WHERE whn = '2020-04-20'
+ORDER BY confirmed DESC;
+```
+
+7. The query shown includes a JOIN t the world table so we can access the total population of each country and calculate
+   infection rates (in cases per 100,000). Show the infect rate ranking for each country. Only include countries with a
+   population of at least 10 million.
+
+        BUG: just error, no query works
+
+8. For each country that has had at last 1000 new cases in a single day, show the date of the peak number of new cases.
+
+        BUG: 'DATE_FORMAT' is not a recognized built-in function name.
+              It doesn't even show what the correct answer is.
